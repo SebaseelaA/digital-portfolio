@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Website</title>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+section
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo
+{
+    position: relative;
+    max-width: 80px;
+}
+header ul
+{
+    position: relative;
+    display:flex;
+}
+header ul li
+{
+    list-style: none;
+}
+header ul li a
+{
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.content 
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .textBox 
+{
+    position: relative;
+    max-width: 600px;
+}
+.content .textBox h2 
+{
+    color: #333;
+    font-size: 3em;
+    line-height: 6rem;
+    font-weight: 500;
+}
+.content .textBox h2 span 
+{
+    color: rgb(179, 32, 56);
+    font-size: 5rem;
+    font-weight: 400;
+}
+.content .textBox p 
+{
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.content .textBox a 
+{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: rgb(63, 39, 3);
+    color:#fff;
+    margin-left: 190px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.content .imgBox 
+{
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.content .imgBox img 
+{
+    max-width: 340px;
+}
+.thumb 
+{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+.thumb li 
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.thumb li:hover 
+{
+    transform: translateY(-20px);
+}
+.thumb li img 
+{
+    max-width: 60px;
+}
+.socialmedia 
+{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.socialmedia li 
+{
+    list-style: none;
+}
+.socialmedia li a 
+{
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.5);
+    filter: invert(1);
+}
+.circle 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background: rgb(179, 32, 56);
+    clip-path: circle(600px at right 700px);
+}
+</style>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Order</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Shop<span> CupCakes</span></h2>
+                <h3>Order CupCakes for your Party</h3>
+                <p>Cupcakes are small, tasty snack cakes that are favored for their portability and portion-control. They are batter cakes baked in a cup-shaped foil or temperature resistant paper. A cupcake can be prepared from a variety of formulations and can be decorated with cream and icings.</p>
+                <a href="#">Order Now</a>
+            </div>
+            <div class="imgBox">
+                <img src="cupcake2.png" class="cupcake">
+            </div>
+        </div>
+         <ul class="thumb">
+            <li><img src="thumb1.png" onclick="imgSlider('cupcake2.png');changeCircleColor('#eb7495')"></li>
+            <li><img src="thumb3.png" onclick="imgSlider('cupcake3.png');changeCircleColor('#3D2B1F')"></li>
+            <li><img src="thumb2.png" onclick="imgSlider('cupcake2.png');changeCircleColor('#d752b1')"></li>
+        </ul>
+        <ul class="socialmedia">
+            <li><a href="#"><img src="facebook icon.png"></a></li>
+            <li><a href="#"><img src="instagram icon.png"></a></li>
+            <li><a href="#"><img src="twitter icon.png"></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything){
+            documemt.querySelector('.starbucks').src = anything;
+        }
+
+        function changeCircleColor(color){
+            const circle = document.querySelector('.circle');
+            circle.style.background = color; 
+        }
+    </script>
+    </body>
+</html>
